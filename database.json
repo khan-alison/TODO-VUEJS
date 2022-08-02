@@ -1,19 +1,44 @@
 {
-  "posts": [
+  "tasks": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "asdsasd",
+      "active": 0,
+      "id": 2,
+      "assign": 2
+    },
+    {
+      "title": "kkkkj",
+      "active": 0,
+      "id": 3,
+      "assign": 2
     }
   ],
-  "comments": [
+  "users": [
     {
+      "email": "khanh@gmail.com",
+      "password": "qwerasdf",
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "role": "admin"
+    },
+    {
+      "email": "user1@gmail.com",
+      "password": "password",
+      "id":2 ,
+      "role": "staff"
+
+    },
+    {
+      "email": "user2@gmail.com",
+      "password": "password",
+      "id":3 ,
+      "role": "staff"
+
+    },
+    {
+      "email": "user3@gmail.com",
+      "password": "password",
+      "id": 4,
+      "role": "user"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

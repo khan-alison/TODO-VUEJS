@@ -3,7 +3,7 @@
     <h2>List Active</h2>
     {{JSON.stringify(tasks)}}
     <table-component>
-      <tr v-for="task in tasks"  v-bind:key="task.id">
+      <tr v-for="task in tasks"  v-bind:key="task.id" v-show="onlyViewCurrentUser(task)">
         <td>
           <input class="mark" type="checkbox" v-model="task.completed" />
           <span class="checkmark"> </span>
@@ -29,8 +29,9 @@
 </template>
 
 <script>
-import Table from '@/components/Table'
+import Table from '@/components/todo/Table'
 import axios from 'axios'
+import {Task} from "@/entities";
 
 export default {
   name:"ListTodoComponent",
@@ -87,6 +88,10 @@ export default {
             console.log(error)
           })
       this.editting = null;
+    },
+    onlyViewCurrentUser(task) {
+      const currentTask = new Task(task)
+      return this.$can('view', currentTask)
     },
   },
 
